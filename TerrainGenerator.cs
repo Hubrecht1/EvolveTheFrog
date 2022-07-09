@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    BoxCollider2D _BoxCollider;
+    private BoxCollider2D _BoxCollider;
     private bool playerCollision = false;
     [SerializeField] private float distance;
-    Transform thisobject;
+    [SerializeField] EnityManager EnityMan;
+    
+
+    private Transform thisobject;
     bool NewObject = true;
 
 
    private IEnumerator Start()
     {
+        
         _BoxCollider = GetComponent<BoxCollider2D>();
         thisobject = GameObject.Find("Terrain").transform;
+        
         playerCollision = false;
         NewObject = true;
         yield return new WaitForSeconds(0.5f);
@@ -30,19 +35,19 @@ public class TerrainGenerator : MonoBehaviour
         {
             GeneratePlainTerrain();
         }
-        
+      
+
     }
 
     void GeneratePlainTerrain()
     {
         GameObject clone;
-
+        
 
         if (DoesOverlap(Vector3.up) == false)
         {
             
             //draw top
-
             clone = Instantiate(this.gameObject, new Vector3(transform.position.x, transform.position.y + _BoxCollider.bounds.size.y + distance, 0f), Quaternion.identity);
             clone.transform.parent = thisobject;
             //draw top corners
@@ -97,6 +102,7 @@ public class TerrainGenerator : MonoBehaviour
             //Debug.Log("collision with player");
             if (playerCollision == false)
             {
+                EnityMan.SpawnClock();
                 GeneratePlainTerrain();
             }
            
