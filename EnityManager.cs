@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnityManager : MonoBehaviour
 {
     [SerializeField] GraspAbleScript _GraspAble;
-    [SerializeField] GameObject _Player;
+    [SerializeField] StatsManager StatsMan;
+    GameObject _Player;
     [SerializeField] GameObject _Clock;
     [SerializeField] GameObject _Turret;
     [SerializeField] TurretGunController _TurrentCon;
@@ -14,7 +15,16 @@ public class EnityManager : MonoBehaviour
     [SerializeField] GameObject EntitiesFile;
     [SerializeField] public int clockCount = 0;
     [SerializeField] public int clockCountMax = 10;
-    
+
+
+
+
+    public void OnPlayerSpawn()
+    {
+        
+        _Player = StatsMan.CurrentPlayerClone;
+
+    }
     
     public void SpawnClock()
     {
@@ -49,11 +59,8 @@ public class EnityManager : MonoBehaviour
         float xoffset = Random.Range(-2f, 2f);
         Instantiate(_Turret, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
         Instantiate(_TurretGun, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
-        _TurrentCon.OnSpawn();
+        //_TurrentCon.OnSpawn();
     }
-
-
-
 
     void Awake()
     {

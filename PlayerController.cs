@@ -5,14 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed;
+    [SerializeField] private float playerHealth;
+    [SerializeField] private float playerAge;
     public Animator animator;
-    [SerializeField] StatsManager stats;
-    [SerializeField] EnityManager EntityMana;
-
+    StatsManager stats;
 
     private void Start()
     {
+       stats = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<StatsManager>();
+    }
+
+
+
+    public void OnSpawn()
+    {
+        playerSpeed = 0;
+        stats = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<StatsManager>();
         playerSpeed = stats.speed;
+
     }
 
     void Update()
@@ -49,17 +59,8 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.S) == false && Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.A) == false && Input.GetKey(KeyCode.D) == false)
         {
             animator.SetFloat("Speed", 0f);
+
         }
     }
-
-
-  
-   
-
-
-
-
-
-
 
 }

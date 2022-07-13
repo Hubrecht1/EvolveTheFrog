@@ -6,14 +6,18 @@ public class TerrainGenerator : MonoBehaviour
 {
     private BoxCollider2D _BoxCollider;
     private bool playerCollision = false;
-    [SerializeField] private float distance;
-    [SerializeField] EnityManager EnityMan;
-    
-
     private Transform thisobject;
     bool NewObject = true;
 
+    GameObject CurrentPlayer;
+    GameObject BigCollider;
+    GameObject MediumCollider;
+    GameObject SmallCollider;
 
+    [SerializeField] float distance;
+    [SerializeField] EnityManager EnityMan;
+    [SerializeField] StatsManager StatsMan;
+    
    private IEnumerator Start()
     {
         
@@ -25,8 +29,15 @@ public class TerrainGenerator : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         NewObject = false;
     }
-   
 
+    public void OnEvolve()
+    {
+        CurrentPlayer = StatsMan.CurrentPlayerClone;
+        BigCollider = CurrentPlayer.transform.Find("BigCollider").gameObject;
+        MediumCollider = CurrentPlayer.transform.Find("MediumCollider").gameObject;
+        SmallCollider = CurrentPlayer.transform.Find("SmallCollider").gameObject;
+
+    }
 
     
     private void Update()
@@ -99,19 +110,20 @@ public class TerrainGenerator : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             
-            //Debug.Log("collision with player");
+            
             if (playerCollision == false)
             {
                 EnityMan.SpawnClock();
                 GeneratePlainTerrain();
             }
-           
+          
             playerCollision = true;
-                
+                  
         }
 
         if(collision.gameObject.tag == "big collider")
         {
+            
             if (this.gameObject.name != "white background")
             {
                 Destroy(gameObject);
@@ -121,6 +133,7 @@ public class TerrainGenerator : MonoBehaviour
 
         if (collision.gameObject.tag == "Medium collider")
         {
+           
             playerCollision = false;
         }
 
@@ -131,8 +144,6 @@ public class TerrainGenerator : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-
 
     }
 
@@ -153,11 +164,10 @@ public class TerrainGenerator : MonoBehaviour
         }
         else
         {
-            //Debug.Log("collision false");
             
             return false;
-        }
 
+        }
 
     }
 

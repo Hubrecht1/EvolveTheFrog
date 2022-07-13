@@ -13,18 +13,6 @@ public class GraspAbleScript : MonoBehaviour
     [SerializeField] public SpriteRenderer SpriteR;
     [SerializeField] EnityManager EnityMan;
 
-    private void Awake()
-    {
-        
-
-    }
-    private void Update()
-    {
-        
-    }
-
-    
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
