@@ -12,17 +12,31 @@ public class GraspAbleScript : MonoBehaviour
  
     [SerializeField] public SpriteRenderer SpriteR;
     [SerializeField] EnityManager EnityMan;
+    StatsManager StatsMan;
+
+    private void Start()
+    {
+        EnityMan = GameObject.FindGameObjectWithTag("EntityManger").GetComponent<EnityManager>();
+        StatsMan = GameObject.Find("PlayerStats").GetComponent<StatsManager>();
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
         
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "big collider")
+        if (collision.gameObject.tag == "Player")
         {
-            EnityMan = GameObject.FindGameObjectWithTag("EntityManger").GetComponent<EnityManager>();
-
             EnityMan.clockCount--;
-            Destroy(this.gameObject); 
+            StatsMan.time_Years += Random.Range(1, 4); ;
+            Destroy(this.gameObject);
+
+        }
+        else if(collision.gameObject.tag == "big collider")
+        {
+            EnityMan.clockCount--;
+            Destroy(this.gameObject);
+
         }
 
     }

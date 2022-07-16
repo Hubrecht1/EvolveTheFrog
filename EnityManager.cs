@@ -13,9 +13,14 @@ public class EnityManager : MonoBehaviour
     [SerializeField] GameObject _TurretGun;
 
     [SerializeField] GameObject EntitiesFile;
-    [SerializeField] public int clockCount = 0;
-    [SerializeField] public int clockCountMax = 10;
 
+    public int clockCount = 0;
+    public int clockCountMax = 10;
+
+    [SerializeField] public int turretCount = 0;
+    [SerializeField] public int turretCountMax = 4;
+
+    
 
 
 
@@ -55,11 +60,31 @@ public class EnityManager : MonoBehaviour
     public void SpawnTurret()
     {
        
-        float yoffset = Random.Range(-2f, 2f);
-        float xoffset = Random.Range(-2f, 2f);
+        float yoffset = Random.Range(5f, 15f);
+        float xoffset = Random.Range(-10f, 10f);
+
+        Instantiate(_Turret, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(_TurretGun, _Player.transform.position + new Vector3 (xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+
+        yoffset = Random.Range(-5f, -10f);
+        xoffset = Random.Range(-10f, 10f);
+
         Instantiate(_Turret, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
         Instantiate(_TurretGun, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
-        //_TurrentCon.OnSpawn();
+
+        yoffset = Random.Range(-10f, 10f);
+        xoffset = Random.Range(5f, 15f);
+
+        Instantiate(_Turret, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(_TurretGun, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+
+        yoffset = Random.Range(-10f, 10f);
+        xoffset = Random.Range(-5f, -15f);
+
+        Instantiate(_Turret, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(_TurretGun, _Player.transform.position + new Vector3(xoffset, yoffset, 0), new Quaternion(0, 0, 0, 0));
+
+        turretCount += 4;
     }
 
     void Awake()

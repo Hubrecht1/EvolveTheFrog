@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed;
-    [SerializeField] private float playerHealth;
-    [SerializeField] private float playerAge;
+    
     public Animator animator;
     StatsManager stats;
 
@@ -62,5 +61,8 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+ 
+
 
 }

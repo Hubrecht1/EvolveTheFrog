@@ -18,7 +18,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] EnityManager EnityMan;
     [SerializeField] StatsManager StatsMan;
     
-   private IEnumerator Start()
+    private IEnumerator Start()
     {
         
         _BoxCollider = GetComponent<BoxCollider2D>();
