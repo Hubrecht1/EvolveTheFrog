@@ -6,6 +6,5 @@ Languages: C#
 
 Engine: Unity 
 
-Supported platforms: Windows, macOS 
 ## License
 ©Hubrecht de Groot 2022 
