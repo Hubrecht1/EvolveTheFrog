@@ -1,9 +1,10 @@
 # EvolveTheFrog
-EvolveTheFrog C# Code 
-
-Engine: Unity 
 
 Latest version: Bèta 1.1 
+# CodeBase
+Languages: C#
+
+Engine: Unity 
 
 Supported platforms: Windows, macOS 
 ## License
