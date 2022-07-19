@@ -1,11 +1,22 @@
 # EvolveTheFrog
 
+## Releases
 Latest version: Bèta 0.2 
-# Releases
+
 No releases yet
 
+## About The Project
 Supported platforms: Windows, macOS
-# CodeBase
+
+How to play:
+
+asdw: move around
+
+space: attack
+
+r: reset game
+
+## CodeBase
 Languages: C#
 
 Engine: Unity 
