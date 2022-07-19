@@ -1,6 +1,6 @@
 # EvolveTheFrog
 
-Latest version: Bèta 1.1 
+Latest version: Bèta 0.2 
 # releases
 No releases yet
 
