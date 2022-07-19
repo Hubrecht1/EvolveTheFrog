@@ -1,7 +1,7 @@
 # EvolveTheFrog
 
 Latest version: Bèta 0.2 
-# releases
+# Releases
 No releases yet
 
 Supported platforms: Windows, macOS
