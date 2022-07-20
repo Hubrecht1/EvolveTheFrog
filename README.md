@@ -10,11 +10,13 @@ Supported platforms: Windows, macOS
 
 How to play:
 
-asdw: move around
+asdw :  move around
 
-space: attack
+space:  attack
 
-r: reset game
+r    :  reset game
+
+esc  :  quit
 
 ## CodeBase
 Languages: C#
