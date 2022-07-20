@@ -8,7 +8,7 @@ No releases yet
 ## About The Project
 Supported platforms: Windows, macOS
 
-How to play:
+Controls:
 
 asdw :  move around
 
