@@ -8,15 +8,7 @@ No releases yet
 ## About The Project
 Supported platforms: Windows, macOS
 
-Controls:
-
-asdw :  move around
-
-space:  attack
-
-r    :  reset game
-
-esc  :  quit
+Download: https://hubrecht.itch.io/evolvethefrog
 
 ## CodeBase
 Languages: C#
